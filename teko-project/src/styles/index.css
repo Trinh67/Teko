@@ -1,0 +1,77 @@
+@import "./basics/_button.scss";
+@import "./basics/_input.scss";
+@import "./basics/_pagingbar.scss";
+@import "./basics/_table.scss";
+
+body {
+    margin: 0;
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    overflow: hidden;
+}
+
+.v-application .title {
+    font-family: Roboto !important;
+}
+
+.v-application {
+    font-family: Roboto !important;
+    font-size: 14px !important;
+    color: #000000 !important;
+}
+
+.v-application a {
+    font-weight: bold;
+    color: #2c3e50 !important;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/Roboto-Regular.ttf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Regular';
+    src: url('../assets/fonts/GoogleSans-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Bold';
+    src: url('../assets/fonts/GoogleSans-Bold.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Italic';
+    src: url('assets/fonts/GoogleSans-Italic.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Light';
+    src: url('../assets/fonts/GoogleSans-Light.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Thin';
+    src: url('../assets/fonts/GoogleSans-Thin.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'GoogleSans-Black';
+    src: url('../assets/fonts/GoogleSans-Black.otf') format('opentype');
+}
+
+::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+    z-index: 1231232123421
+}
+
+::-webkit-scrollbar-track {
+    width: 6px;
+    background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #808080;
+    border-radius: 8px
+}

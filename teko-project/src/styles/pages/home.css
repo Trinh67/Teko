@@ -1,0 +1,64 @@
+.content {
+  position: absolute;
+  top: 2vh;
+  left: 5vw;
+  right: 5vw;
+  width: calc(100% - 10vw);
+  background-color: #ffffff;
+  border-top: 8px solid #d9d9d9;
+  border-left: 8px solid #d9d9d9;
+  border-right: 8px solid #d9d9d9;
+  border-bottom: 4px solid #d9d9d9;
+  bottom: 0px;
+}
+
+.grid-product {
+  height: calc(100vh - 5vh);
+}
+
+/* Paging */
+.content .paging-bar{
+  border-top: 4px solid #d9d9d9;
+  height: 60px;
+  margin: 0px;
+  padding-bottom: 0px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  border-bottom: 8px solid #d9d9d9;
+}
+.content .paging-bar .paging-record-option select.input-number-record{
+  margin-left: 8px;
+  height: 32px;
+  width: 80px;
+  padding: 4px 12px;
+}
+
+  
+/* toggle message */
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    max-width: 400px;
+    margin-left: -125px;
+    background-color: rgba(0, 148, 7, 0.753);
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 5;
+    right: 5%;
+    top: 40px;
+    font-size: 17px;
+  }
+  #snackbar.showCorrect {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+  #snackbar.showError{
+    background-color: #cf0000;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
