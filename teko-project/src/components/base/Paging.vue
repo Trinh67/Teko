@@ -24,7 +24,7 @@
           <option :value='50'>50</option>
         </select>
       </div>
-      <div class="paging-record-info">Hiển thị {{PagingValue.startListProduct}} - {{PagingValue.finishListProduct}} trên {{PagingValue.productDataLength}} kết quả</div>
+      <div class="paging-record-info">Hiển thị {{PagingValue.startListProduct + 1}} - {{PagingValue.finishListProduct}} trên {{PagingValue.productDataLength}} kết quả</div>
     </div>
 </template>
 <script>
@@ -97,12 +97,6 @@ export default {
     },
     // SetValuePaging when change
     SetValuePaging(){
-        this.Paging.totalPage = Math.ceil(this.Paging.productDataLength/this.Paging.number);
-        if(this.Paging.currentPage > this.Paging.totalPage) this.Paging.startPoint = 0;
-        this.Paging.startListProduct = this.Paging.number*this.Paging.startPoint + 1;
-        if(this.Paging.number*(this.Paging.startPoint + 1) >= this.Paging.productDataLength) this.Paging.finishListProduct = this.Paging.productDataLength;
-        else this.Paging.finishListProduct = this.Paging.number*(this.Paging.startPoint + 1);
-        this.Paging.currentPage = this.Paging.startPoint + 1;
         this.$emit('changePagingValue');
     }
   },

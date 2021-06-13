@@ -271,11 +271,20 @@ export default {
          * Create by: TXTrinh (13/06/2021)
          */
         setPagingValue(){
-          this.PagingValue.startListProduct = this.PagingValue.number*this.PagingValue.startPoint + 1;
-          this.PagingValue.finishListProduct = this.PagingValue.startListProduct + this.PagingValue.number - 1;
-          if(this.PagingValue.finishListProduct > this.PagingValue.productDataLength) this.PagingValue.finishListProduct = this.PagingValue.productDataLength;
-          this.ProductList = this.Products.splice(this.PagingValue.startListProduct - 1, this.PagingValue.finishListProduct);
+          this.PagingValue.productDataLength = this.Products.length;
+
           this.PagingValue.totalPage = Math.ceil(this.PagingValue.productDataLength/this.PagingValue.number);
+          if(this.PagingValue.currentPage > this.PagingValue.totalPage) this.PagingValue.startPoint = 0;
+          this.PagingValue.startListProduct = this.PagingValue.number*this.PagingValue.startPoint;
+          if(this.PagingValue.number*(this.PagingValue.startPoint + 1) >= this.PagingValue.productDataLength) this.PagingValue.finishListProduct = this.PagingValue.productDataLength;
+          else this.PagingValue.finishListProduct = this.PagingValue.number*(this.PagingValue.startPoint + 1);
+          this.PagingValue.currentPage = this.PagingValue.startPoint + 1;
+
+          let ListProBegin = this.Products.slice(0, this.PagingValue.startListProduct);
+          this.ProductList = this.Products.slice(this.PagingValue.startListProduct, this.PagingValue.finishListProduct);
+          let ListProEnd = this.Products.slice(this.PagingValue.finishListProduct, this.PagingValue.productDataLength);
+
+          this.Products = ListProBegin.concat(this.ProductList.concat(ListProEnd));
         }
     },
 
@@ -285,7 +294,6 @@ export default {
      */
     async mounted(){
         this.Products = await productServices.getProducts();
-        this.PagingValue.productDataLength = this.Products.length;
         this.setPagingValue();
         this.errorNameList();
     }
